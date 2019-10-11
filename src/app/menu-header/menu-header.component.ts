@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogSettingsComponent } from './dialog-settings/dialog-settings.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-menu-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openSettings() {
+    this.dialog.open(DialogSettingsComponent);
   }
 
 }

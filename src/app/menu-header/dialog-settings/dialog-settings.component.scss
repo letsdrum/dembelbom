@@ -1,0 +1,33 @@
+.container {
+    width: 500px;
+}
+button{
+    margin-left: auto;
+}
+h2,
+h4 {
+    font-weight: normal;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+    margin: 0;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}

@@ -7,13 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { DialogSettingsComponent } from './menu-header/dialog-settings/dialog-settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuHeaderComponent,
-    MainContentComponent
+    MainContentComponent,
+    DialogSettingsComponent
   ],
+  entryComponents: [DialogSettingsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
