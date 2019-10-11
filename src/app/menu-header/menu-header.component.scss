@@ -1,0 +1,27 @@
+.container {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    font-weight: normal;
+    margin: 10px;
+  }
+}
+
+.funcs{
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+i{
+    color: rgb(99, 99, 99);
+}
