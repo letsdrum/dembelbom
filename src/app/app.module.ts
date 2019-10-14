@@ -10,6 +10,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { DialogSettingsComponent } from './menu-header/dialog-settings/dialog-settings.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MenuHeaderComponent,
     MainContentComponent,
     DialogSettingsComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   entryComponents: [DialogSettingsComponent],
   imports: [
