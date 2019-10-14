@@ -1,0 +1,51 @@
+.example-form {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  mat-form-field {
+    margin: 0;
+  }
+}
+
+.logo {
+  background-color: rgb(179, 179, 179);
+}
+
+#bom {
+  color: black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 35px;
+    margin-right: 15px;
+    color: white;
+    font-weight: normal;
+  }
+}
+
+button {
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-form {
+  min-width: 300px;
+  max-width: 520px;
+  padding: 20px;
+  background-color: white;
+}

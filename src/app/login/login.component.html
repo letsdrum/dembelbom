@@ -1,0 +1,22 @@
+<div class="container">
+    <div [class.mat-elevation-z2]="!isActive" class="container-form">
+        <div class="logo row">
+            <h2>DEMBEL</h2>
+            <h2 id="bom">BOM!</h2>
+        </div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [formControl]="emailFormControl">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary">ВОЙТИ</button>
+
+        </form>
+    </div>
+</div>
