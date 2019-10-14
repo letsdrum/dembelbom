@@ -11,6 +11,10 @@ import { DialogSettingsComponent } from './menu-header/dialog-settings/dialog-se
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { environment } from 'src/environments/environment';
+
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
