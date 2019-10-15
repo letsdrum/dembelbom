@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogSettingsComponent } from './dialog-settings/dialog-settings.component';
 import { MatDialog } from '@angular/material';
+import { DialogUploadComponent } from './dialog-upload/dialog-upload.component';
 
 @Component({
   selector: 'app-menu-header',
@@ -16,6 +17,10 @@ export class MenuHeaderComponent implements OnInit {
 
   openSettings() {
     this.dialog.open(DialogSettingsComponent);
+  }
+
+  openUpload() {
+    this.dialog.open(DialogUploadComponent)
   }
 
 }

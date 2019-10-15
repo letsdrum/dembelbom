@@ -14,7 +14,13 @@ import { HomeComponent } from './home/home.component';
 import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire'
-import { AngularFireDatabaseModule } from '@angular/fire/database'
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { DialogUploadComponent } from './menu-header/dialog-upload/dialog-upload.component';
+
+const DialogComponents = [
+  DialogSettingsComponent,
+  DialogUploadComponent
+];
 
 @NgModule({
   declarations: [
@@ -24,9 +30,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
     MainContentComponent,
     DialogSettingsComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DialogUploadComponent
   ],
-  entryComponents: [DialogSettingsComponent],
+  entryComponents: [DialogComponents],
   imports: [
     BrowserModule,
     AppRoutingModule,
