@@ -11,10 +11,12 @@ import { DialogSettingsComponent } from './menu-header/dialog-settings/dialog-se
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { environment } from 'src/environments/environment';
 
+import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { DialogUploadComponent } from './menu-header/dialog-upload/dialog-upload.component';
 
 const DialogComponents = [
@@ -42,7 +44,8 @@ const DialogComponents = [
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
