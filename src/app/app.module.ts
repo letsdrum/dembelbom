@@ -23,10 +23,12 @@ import { UploaderComponent } from './menu-header/uploader/uploader.component';
 import { UploadTaskComponent } from './menu-header/upload-task/upload-task.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { DialogProfileComponent } from './menu-header/dialog-profile/dialog-profile.component';
 
 const DialogComponents = [
   DialogSettingsComponent,
-  DialogUploadComponent
+  DialogUploadComponent,
+  DialogProfileComponent
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const DialogComponents = [
     DialogUploadComponent,
     DropzoneDirective,
     UploaderComponent,
-    UploadTaskComponent
+    UploadTaskComponent,
+    DialogProfileComponent
   ],
   entryComponents: [DialogComponents],
   imports: [

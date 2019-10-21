@@ -1,0 +1,20 @@
+.container {
+  padding: 50px;
+}
+.img {
+  width: 150px;
+  height: 150px;
+  img {
+      border-radius: 100%;
+  }
+}
+.information {
+  text-align: center;
+  h4{
+      font-weight: normal;
+      margin: 0;
+  }
+  h5{
+      margin-top: 5px;
+  }
+}

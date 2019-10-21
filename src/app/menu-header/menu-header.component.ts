@@ -3,6 +3,7 @@ import { DialogSettingsComponent } from './dialog-settings/dialog-settings.compo
 import { MatDialog } from '@angular/material';
 import { DialogUploadComponent } from './dialog-upload/dialog-upload.component';
 import { AuthService } from '../Services/auth.service';
+import { DialogProfileComponent } from './dialog-profile/dialog-profile.component';
 
 @Component({
   selector: 'app-menu-header',
@@ -22,6 +23,10 @@ export class MenuHeaderComponent implements OnInit {
 
   openUpload() {
     this.dialog.open(DialogUploadComponent)
+  }
+  
+  openProfile(){
+    this.dialog.open(DialogProfileComponent)
   }
 
   logout(){
