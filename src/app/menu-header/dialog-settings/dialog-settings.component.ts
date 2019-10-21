@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-dialog-settings',
@@ -8,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class DialogSettingsComponent implements OnInit {
   hide = true;
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  updatePW(newPW: string) {
+    this.auth.user.updatePassword(newPW)
+    console.log("Success");
+    
   }
 
+  updateDisplayName(dName: string) {
+    this.auth.user.updateProfile({
+      displayName: dName
+    })
+  }
 }

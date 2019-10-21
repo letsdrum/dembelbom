@@ -1,33 +1,46 @@
 .container {
-    width: 500px;
+  width: 500px;
 }
-.button{
-    text-align: end;
+.button {
+  text-align: end;
 }
 h2,
 h4 {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .example-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.example-container>* {
-    width: 100%;
-    margin: 0;
+.example-container > * {
+  width: 100%;
+  margin: 0;
 }
 
 .example-right-align {
-    text-align: right;
+  text-align: right;
 }
 
 input.example-right-align::-webkit-outer-spin-button,
 input.example-right-align::-webkit-inner-spin-button {
-    display: none;
+  display: none;
 }
 
 input.example-right-align {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.flex {
+    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    flex-direction: row;
+    mat-form-field {
+      width: 100%;
+    }
+  }
 }

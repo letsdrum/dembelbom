@@ -1,10 +1,10 @@
 <div class="container">
     <div class="img">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src={{this.auth.user.photoURL}} alt="Photo of a Shiba Inu">
     </div>
     <div class="information">
-        <h4>Sergey Verbin</h4>
-        <h5>letsdrumm@gmail.com</h5>
+        <h4>{{this.auth.user.displayName}}</h4>
+        <h5>{{this.auth.user.email}}</h5>
         <button mat-raised-button color="accent" (click)="openSettings()">Settings</button>
     </div>
 </div>

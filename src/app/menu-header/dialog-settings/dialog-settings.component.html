@@ -3,26 +3,24 @@
     <h4>Change your password</h4>
     <div class="example-container">
         <mat-form-field>
-            <input matInput placeholder="Enter your current password" [type]="hide ? 'password' : 'text'">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="Enter your new password" [type]="hide ? 'password' : 'text'">
+            <input #newPW matInput placeholder="Enter your new password" [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="Repeat your new password" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
+        <button mat-button (click)="updatePW(newPW.value)">SAVE</button>
     </div>
-    <div class="button">
-        <button mat-button>SUMBIT</button>
+
+    <mat-divider></mat-divider>
+
+
+    <div class="flex">
+        <div>
+            <mat-form-field>
+                <input #displayName matInput placeholder="Display Name" value={{this.auth.user.displayName}}>
+            </mat-form-field>
+        </div>
+        <button mat-button (click)="updateDisplayName(displayName.value)">SAVE</button>
     </div>
 </div>
