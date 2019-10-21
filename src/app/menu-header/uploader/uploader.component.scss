@@ -31,3 +31,8 @@ progress::-webkit-progress-value {
 img {
   width: 250px;
 }
+
+.field{
+  display: flex;
+  flex-direction: column;
+}
