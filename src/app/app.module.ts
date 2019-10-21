@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,11 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { DialogUploadComponent } from './menu-header/dialog-upload/dialog-upload.component';
+import { DropzoneDirective } from './dropzone.directive';
+import { UploaderComponent } from './menu-header/uploader/uploader.component';
+import { UploadTaskComponent } from './menu-header/upload-task/upload-task.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 const DialogComponents = [
   DialogSettingsComponent,
@@ -33,7 +38,10 @@ const DialogComponents = [
     DialogSettingsComponent,
     LoginComponent,
     HomeComponent,
-    DialogUploadComponent
+    DialogUploadComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent
   ],
   entryComponents: [DialogComponents],
   imports: [
@@ -47,7 +55,8 @@ const DialogComponents = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [  AngularFireStorage, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
