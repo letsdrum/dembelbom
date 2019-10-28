@@ -2,29 +2,18 @@
     <div class="container">
         <div class="container-flex center">
 
-
             <div class="album" *ngFor="let photo of photos">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Вербин С.Д.</mat-card-title>
-                        <mat-card-subtitle>рядовой</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image
-                        src={{photo.downloadURL}}
-                        alt="Photo">
-                    <mat-card-actions align="right">
-                        <button mat-icon-button>
-                            <i class="fas fa-cloud-download-alt fa-lg"></i>
-                        </button>
+                <img src="{{photo.downloadURL}}" alt="">
 
-                        <button mat-icon-button>
-                            <i class="fas fa-eye fa-lg"></i>
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
+                <div class="buttons">
+                    <button mat-icon-button>
+                        <a href="{{photo.downloadURL}}"><i class="fas fa-cloud-download-alt fa-lg"></i></a>
+                    </button>
+                    <button mat-icon-button (click)="openPhoto(photo.downloadURL)">
+                        <i class="fas fa-eye fa-lg"></i>
+                    </button>
+                </div>
             </div>
-
 
         </div>
     </div>

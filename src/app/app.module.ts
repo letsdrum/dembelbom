@@ -24,11 +24,13 @@ import { UploadTaskComponent } from './menu-header/upload-task/upload-task.compo
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { DialogProfileComponent } from './menu-header/dialog-profile/dialog-profile.component';
+import { DialogFullsizePhotoComponent } from './main-content/dialog-fullsize-photo/dialog-fullsize-photo.component';
 
 const DialogComponents = [
   DialogSettingsComponent,
   DialogUploadComponent,
-  DialogProfileComponent
+  DialogProfileComponent,
+  DialogFullsizePhotoComponent
 ];
 
 @NgModule({
@@ -44,7 +46,8 @@ const DialogComponents = [
     DropzoneDirective,
     UploaderComponent,
     UploadTaskComponent,
-    DialogProfileComponent
+    DialogProfileComponent,
+    DialogFullsizePhotoComponent
   ],
   entryComponents: [DialogComponents],
   imports: [
