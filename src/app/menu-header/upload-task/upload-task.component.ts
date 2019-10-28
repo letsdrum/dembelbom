@@ -21,8 +21,7 @@ export class UploadTaskComponent implements OnInit {
   downloadURL;
 
   //constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore, private dicts: AngularFireDatabase,
-    private auth: AuthService) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore, private auth: AuthService) { }
 
   ngOnInit() {
     this.startUpload();
@@ -49,7 +48,6 @@ export class UploadTaskComponent implements OnInit {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
         this.db.collection('files').add({ downloadURL: this.downloadURL, path });
-        this.dicts.database.ref("/Photos").push(this.downloadURL)
       }),
     );
   }
