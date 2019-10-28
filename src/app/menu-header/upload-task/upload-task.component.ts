@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AuthService } from 'src/app/Services/auth.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'upload-task',
@@ -12,7 +13,6 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class UploadTaskComponent implements OnInit {
   @Input() file: File;
-  @Input() nameAlbum: string;
 
   task: AngularFireUploadTask;
 
@@ -21,7 +21,7 @@ export class UploadTaskComponent implements OnInit {
   downloadURL;
 
   //constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore,
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore, private dicts: AngularFireDatabase,
     private auth: AuthService) { }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class UploadTaskComponent implements OnInit {
   startUpload() {
 
     // The storage path
-    const path = `dembelbom/${this.auth.user.email}/${this.nameAlbum}/${Date.now()}_${this.file.name}`;
+    const path = `dembelbom/${Date.now()}_${this.file.name}`;
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);
@@ -49,6 +49,7 @@ export class UploadTaskComponent implements OnInit {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
         this.db.collection('files').add({ downloadURL: this.downloadURL, path });
+        this.dicts.database.ref("/Photos").push(this.downloadURL)
       }),
     );
   }

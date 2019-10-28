@@ -4,21 +4,13 @@
   <p>Drag and Drop a File</p>
   <div class="file">
     <label class="file-label">
-      <input #file class="file-input" multiple type="file">
+      <input #file class="file-input" multiple type="file" (change)="onDrop(file.files)">
     </label>
   </div>
-</div>
-
-<div class="field">
-  <mat-form-field appearance="outline">
-    <mat-label>Name of album</mat-label>
-    <input #nameAlbum matInput placeholder="Enter...">
-  </mat-form-field>
-  <button mat-raised-button color="accent" (click)="onDrop(file.files)">SUBMIT</button>
 </div>
 
 <mat-divider></mat-divider>
 
 <div *ngFor="let file of files">
-  <upload-task [file]="file" [nameAlbum]=nameAlbum.value></upload-task>
+  <upload-task [file]="file"></upload-task>
 </div>
