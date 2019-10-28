@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FileServiceService } from '../Services/file-service.service';
+import { Photo } from '../../Models/photo';
 
 @Component({
   selector: 'app-main-content',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
-  constructor() { }
+  photos: Photo[] = [];
+  constructor(public uploadService: FileServiceService) { }
 
   ngOnInit() {
+    this.uploadService.getPhotos().subscribe(
+      (photo: Photo[]) => {
+        this.photos = photo;
+      }
+    )
   }
 
 }

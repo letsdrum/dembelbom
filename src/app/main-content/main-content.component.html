@@ -2,7 +2,8 @@
     <div class="container">
         <div class="container-flex center">
 
-            <div class="album">
+
+            <div class="album" *ngFor="let photo of photos">
                 <mat-card class="example-card">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>
@@ -10,7 +11,7 @@
                         <mat-card-subtitle>рядовой</mat-card-subtitle>
                     </mat-card-header>
                     <img mat-card-image
-                        src="https://www.armytimes.com/resizer/rYHgrCMS-qGtmcFQccc1MDBq268=/1200x0/filters:quality(100)/arc-anglerfish-arc2-prod-mco.s3.amazonaws.com/public/4BCLNCX25JBNZC7ZRDRACBNFYA.jpg"
+                        src={{photo.downloadURL}}
                         alt="Photo">
                     <mat-card-actions align="right">
                         <button mat-icon-button>
@@ -23,6 +24,7 @@
                     </mat-card-actions>
                 </mat-card>
             </div>
+
 
         </div>
     </div>
