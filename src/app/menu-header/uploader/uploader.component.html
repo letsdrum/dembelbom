@@ -1,16 +1,24 @@
-<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+<div class="container-flex">
+  <div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
+    [class.hovering]="isHovering">
 
-  <h3>Drop Zone</h3>
-  <p>Drag and Drop a File</p>
-  <div class="file">
-    <label class="file-label">
-      <input #file class="file-input" multiple type="file" (change)="onDrop(file.files)">
-    </label>
+    <h3>Drop Zone</h3>
+    <p>Drag and Drop a File</p>
+    <p>OR</p>
+    <div class="file">
+      <label class="file-label">
+        <div>
+          <i class="fas fa-cloud-upload-alt"></i>
+          <span>Upload</span>
+        </div>
+        <input #file class="file-input" multiple type="file" (change)="onDrop(file.files)">
+      </label>
+    </div>
   </div>
-</div>
 
-<mat-divider></mat-divider>
+  <mat-divider></mat-divider>
 
-<div *ngFor="let file of files">
-  <upload-task [file]="file"></upload-task>
+  <div *ngFor="let file of files">
+    <upload-task [file]="file"></upload-task>
+  </div>
 </div>

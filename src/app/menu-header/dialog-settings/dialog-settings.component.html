@@ -1,26 +1,28 @@
-<div class="container">
-    <h2>Settings</h2>
-    <h4>Change your password</h4>
-    <div class="example-container">
-        <mat-form-field>
-            <input #newPW matInput placeholder="Enter your new password" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-        <button mat-button (click)="updatePW(newPW.value)">SAVE</button>
-    </div>
-
-    <mat-divider></mat-divider>
-
-
-    <div class="flex">
-        <div>
+<div class="container-flex">
+    <div class="container">
+        <h2>Settings</h2>
+        <h4>Change your password</h4>
+        <div class="example-container">
             <mat-form-field>
-                <input #displayName matInput placeholder="Display Name" value={{this.auth.user.displayName}}>
+                <input #newPW matInput placeholder="Enter your new password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
             </mat-form-field>
+            <button mat-button (click)="updatePW(newPW.value)">SAVE</button>
         </div>
-        <button mat-button (click)="updateDisplayName(displayName.value)">SAVE</button>
+
+        <mat-divider></mat-divider>
+
+
+        <div class="flex">
+            <div>
+                <mat-form-field>
+                    <input #displayName matInput placeholder="Display Name" value={{this.auth.user.displayName}}>
+                </mat-form-field>
+            </div>
+            <button mat-button (click)="updateDisplayName(displayName.value)">SAVE</button>
+        </div>
     </div>
 </div>

@@ -33,10 +33,21 @@
   img {
     width: 100%;
     height: 260px;
-    border-radius: 15px 15px 0 0;
   }
 }
 
+.sender {
+  display: flex;
+  flex: row;
+  padding: 15px;
+  align-items: center;
+  img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+}
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -46,22 +57,71 @@
   }
 }
 
-.example-card {
-  max-width: 450px;
-  background-color: rgb(243, 243, 243);
-  i {
-    color: rgb(114, 114, 114);
-  }
-}
-
-.example-header-image {
-  background-image: url("https://www.stripes.com/polopoly_fs/1.557391.1542726644!/image/image.jpg_gen/derivatives/landscape_900/image.jpg");
-  background-size: cover;
-}
-
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .album {
     width: 350px;
   }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #watch {
+    display: none;
+  }
+  .album {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 0.2px rgb(206, 206, 206) solid;
+    img {
+      border-radius: 0;
+    }
+  }
+
+  .sender {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
 }

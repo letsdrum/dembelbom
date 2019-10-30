@@ -11,6 +11,7 @@ import { DialogSettingsComponent } from '../dialog-settings/dialog-settings.comp
 export class DialogProfileComponent implements OnInit {
 
   openSettings() {
+    this.dialog.closeAll();
     this.dialog.open(DialogSettingsComponent)
   }
   constructor(public dialog: MatDialog, public auth: AuthService) { }

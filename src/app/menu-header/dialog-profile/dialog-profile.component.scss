@@ -1,3 +1,8 @@
+.container-flex {
+  width: 100;
+  display: flex;
+}
+
 .container {
   padding: 50px;
 }
@@ -5,17 +10,19 @@
   width: 150px;
   height: 150px;
   img {
-      border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
   }
 }
 .information {
   margin-top: 25px;
   text-align: center;
-  h4{
-      font-weight: normal;
-      margin: 0;
+  h4 {
+    font-weight: normal;
+    margin: 0;
   }
-  h5{
-      margin-top: 5px;
+  h5 {
+    margin-top: 5px;
   }
 }

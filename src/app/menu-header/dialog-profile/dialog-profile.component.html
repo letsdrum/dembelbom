@@ -1,10 +1,12 @@
-<div class="container">
-    <div class="img">
-        <img mat-card-image src={{this.auth.user.photoURL}} alt="Photo of a Shiba Inu">
-    </div>
-    <div class="information">
-        <h4>{{this.auth.user.displayName}}</h4>
-        <h5>{{this.auth.user.email}}</h5>
-        <button mat-raised-button color="accent" (click)="openSettings()">Settings</button>
+<div class="container-flex">
+    <div class="container">
+        <div class="img">
+            <img mat-card-image src={{this.auth.user.photoURL}} alt="Photo of a Shiba Inu">
+        </div>
+        <div class="information">
+            <h4>{{this.auth.user.displayName}}</h4>
+            <h5>{{this.auth.user.email}}</h5>
+            <button mat-raised-button color="accent" (click)="openSettings()">Settings</button>
+        </div>
     </div>
 </div>
