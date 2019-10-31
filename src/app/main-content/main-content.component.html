@@ -1,12 +1,12 @@
 <div class="center">
     <div class="container">
         <div class="container-flex center">
-
+            <h2>{{qwe}}</h2>
             <div class="album" *ngFor="let photo of photos">
                 <div class="sender">
                     <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
                         alt="">
-                    <span>*doesnt work*</span>
+                    <span>{{photo.email}}</span>
                 </div>
                 <img src="{{photo.downloadURL}}" alt="">
 

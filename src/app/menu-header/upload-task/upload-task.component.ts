@@ -5,6 +5,7 @@ import { finalize, tap } from 'rxjs/operators';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AuthService } from 'src/app/Services/auth.service';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'upload-task',
@@ -18,19 +19,23 @@ export class UploadTaskComponent implements OnInit {
 
   percentage: Observable<number>;
   snapshot: Observable<any>;
+
   downloadURL;
+  public today: number = Date.now();
+
 
   //constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore, private auth: AuthService) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore, public auth: AuthService, ) { }
 
   ngOnInit() {
     this.startUpload();
   }
 
   startUpload() {
-
+    let date = formatDate(new Date(), 'medium', 'en-US')
     // The storage path
     const path = `dembelbom/${Date.now()}_${this.file.name}`;
+    let authed_user_email = this.auth.user.email;
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);
@@ -47,7 +52,7 @@ export class UploadTaskComponent implements OnInit {
       finalize(async () => {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
-        this.db.collection('files').add({ downloadURL: this.downloadURL, path });
+        this.db.collection('files').add({ downloadURL: this.downloadURL, path, date: date, email: authed_user_email });
       }),
     );
   }
