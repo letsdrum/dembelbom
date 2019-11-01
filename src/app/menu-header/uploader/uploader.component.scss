@@ -1,6 +1,7 @@
 .container-flex {
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 .dropzone {
   display: flex;
