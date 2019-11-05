@@ -1,32 +1,15 @@
 <div class="center">
     <div class="container">
         <div class="container-flex">
-            <button mat-icon-button (click)="openProfile()">
-                <i class="fas fa-user fa-lg"></i>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <i class="fas fa-ellipsis-v fa-lg"></i>
             </button>
 
             <h2>DEMBEL BOM</h2>
 
-            <button mat-icon-button [matMenuTriggerFor]="menu">
-                <i class="fas fa-ellipsis-v fa-lg"></i>
+            <button mat-icon-button (click)="openProfile()">
+                <i class="fas fa-user fa-lg"></i>
             </button>
-        </div>
-        <mat-divider></mat-divider>
-        <div class="funcs">
-            <div class="container-flex">
-                <button mat-icon-button (click)="openUpload()">
-                    <i class="fas fa-plus-circle fa-lg"></i>
-                </button>
-
-                <button mat-icon-button>
-                    <i class="fas fa-list-ul fa-lg"></i>
-                </button>
-
-                <button mat-icon-button>
-                    <i class="fas fa-share-alt fa-lg"></i>
-                </button>
-
-            </div>
         </div>
         <mat-divider></mat-divider>
     </div>
@@ -35,6 +18,7 @@
 
 <!-- Menu -->
 <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openUpload()">Upload</button>
     <button mat-menu-item (click)="openSettings()">Settings</button>
     <mat-divider></mat-divider>
     <button mat-menu-item (click)="logout()">Logout</button>
