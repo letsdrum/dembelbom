@@ -9,5 +9,4 @@ Angular v 8.3.5.
 
 
 ## Description
-Photo album from army.
-> Constructor army soon
+Simple photo album from army.
