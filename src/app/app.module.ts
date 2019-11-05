@@ -25,6 +25,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { DialogProfileComponent } from './menu-header/dialog-profile/dialog-profile.component';
 import { DialogFullsizePhotoComponent } from './main-content/dialog-fullsize-photo/dialog-fullsize-photo.component';
+import { firebaseConfig } from 'src/env';
 
 const DialogComponents = [
   DialogSettingsComponent,
@@ -57,7 +58,7 @@ const DialogComponents = [
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
